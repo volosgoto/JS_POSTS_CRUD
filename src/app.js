@@ -62,6 +62,23 @@ function submitPost() {
 }
 
 
+// Delete Post
+function deletePost(e) {
+  if(e.target.parentElement.classList.contains('delete')) {
+    const id = e.target.parentElement.dataset.id;
+    if(confirm('Are you sure?')) {
+      http.delete(`http://localhost:3000/posts/${id}`)
+        .then(data => {
+          ui.showAlert('Post removed', 'alert alert-success');
+          getPosts();
+        })
+        .catch(err => console.log(err));
+    }
+  }
+  e.preventDefault();
+}
+
+
 // Enable Edit State
 function enableEdit(e) {
   if(e.target.parentElement.classList.contains('edit')) {
@@ -88,6 +105,5 @@ function cancelEdit(e) {
   if(e.target.classList.contains('post-cancel')) {
     ui.changeFormState('add');
   }
-
   e.preventDefault();
 }

@@ -1,11 +1,6 @@
 {
   "posts": [
     {
-      "title": "json-server",
-      "body": "mnmn",
-      "id": 1
-    },
-    {
       "id": 2,
       "title": "json-server",
       "body": "This is post 2",
@@ -22,13 +17,7 @@
       "id": 4
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
