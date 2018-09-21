@@ -88,9 +88,28 @@ class UI {
       const button = document.createElement('button');
       button.className = 'post-cancel btn btn-light btn-block';
       button.appendChild(document.createTextNode('Cancel Edit'));
-      
-    } else {
 
+      // Insert Cansel btn into the Dom
+      // Get parent
+      const cardForm = document.querySelector('.card-form');
+      // Get element to insert before
+      const formEnd = document.querySelector('.form-end');
+      // Insert cancel button
+      cardForm.insertBefore(button, formEnd);
+
+    } else {
+      this.postSubmit.textContent = 'Post It';
+      this.postSubmit.className = 'post-submit btn btn-primary btn-block';
+      
+        // Remove cancel btn if it is there
+        if(document.querySelector('.post-cancel')) {
+          document.querySelector('.post-cancel').remove();
+        }
+      
+        // Clear ID from hidden field
+      this.clearIdInput();
+      // Clear text
+      this.clearFields();
     }
 
   }
