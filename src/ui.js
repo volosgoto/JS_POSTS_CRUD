@@ -78,8 +78,21 @@ class UI {
     this.changeFormState('edit');
   }
 
+  // Change the form state
   changeFormState(type) { 
-    
+    if(type === 'edit') {
+      this.postSubmit.textContent = 'Update Post';
+      this.postSubmit.className = 'post-submit btn btn-warning btn-block';
+
+      // Create cancel button
+      const button = document.createElement('button');
+      button.className = 'post-cancel btn btn-light btn-block';
+      button.appendChild(document.createTextNode('Cancel Edit'));
+      
+    } else {
+
+    }
+
   }
 
 }
